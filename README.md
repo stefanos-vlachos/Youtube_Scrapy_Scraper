@@ -1,5 +1,5 @@
-YouTube Scrapy Spider
-=======================
+YouTube Scrapy Web Scraper
+==========================
 
 Overview
 ---------
