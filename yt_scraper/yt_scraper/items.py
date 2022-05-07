@@ -21,7 +21,7 @@ class ChannelData(scrapy.Item):
 
 class VideoData(scrapy.Item):
     video_id = scrapy.Field()
-    video_title = scrapy.Field()
+    title = scrapy.Field()
     upload_date = scrapy.Field()
     duration = scrapy.Field()
     view_count = scrapy.Field()

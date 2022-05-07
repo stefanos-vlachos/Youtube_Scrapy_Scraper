@@ -72,7 +72,7 @@ class YoutubeSpider(Spider):
                 channel_data['creation_date'] = response['items'][0]['snippet']['publishedAt']
 
                 #Checks if channel has public total views count
-                if "view_count" in response['items'][0]['statistics']:
+                if "viewCount" in response['items'][0]['statistics']:
                     channel_data['view_count'] = int(response['items'][0]['statistics']['viewCount'])
 
                 channel_data['subscriber_count'] = int(response['items'][0]['statistics']['subscriberCount'])
@@ -133,13 +133,13 @@ class YoutubeSpider(Spider):
 
             video_data['video_category'] = self.video_categories.get(response['items'][0]['snippet']['categoryId'])
             video_data['video_id'] = response['items'][0]['id']
-            video_data['video_title'] = response['items'][0]['snippet']['title']
+            video_data['title'] = response['items'][0]['snippet']['title']
             video_data['upload_date'] = response['items'][0]['snippet']['publishedAt']
             
             video_data['duration'] = int(isodate.parse_duration(response['items'][0]["contentDetails"]["duration"]).total_seconds())
 
             #Checks if the video has public views count
-            if 'view_count' in response['items'][0]['statistics']:
+            if 'viewCount' in response['items'][0]['statistics']:
                 video_data['view_count'] = int(response['items'][0]['statistics']['viewCount'])
 
             #Checks if the video has public likes count  
